@@ -46,7 +46,7 @@ public class MyDeptDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return dept.getUserName();
+		return dept.getEmail();
 	}
 
 	@Override

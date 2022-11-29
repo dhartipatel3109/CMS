@@ -71,7 +71,7 @@
                                             <tr>
                                                 <th>Department Name</th>
                                                 <td>
-                                                	<input type="text" class="form-control" id="departmentname" required placeholder="Department Name" />
+                                                	<input type="text" class="form-control" id="deptname" required placeholder="Department Name" />
                                                	</td>
                                             </tr>
                                             <tr>
@@ -81,15 +81,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Department Username</th>
+                                                <th>Department Password</th>
                                                 <td> 
-                                                	<input type="text" class="form-control" id="departmentemail" required placeholder="Department Email" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Department Email</th>
-                                                <td> 
-                                                	<input type="text" class="form-control" id="departmentemail" required placeholder="Department Email" />
+                                                	<input type="text" class="form-control" id="password" required placeholder="Department Password" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -113,7 +107,7 @@
                                             <tr>
                                                 <th>Department Location</th>
                                                 <td>
-                                                	<input type="text" class="form-control" id="dep_loc" required placeholder="Department Location" />
+                                                	<input type="text" class="form-control" id="location" required placeholder="Department Location" />
                                                 </td>
                                             </tr>
                                         

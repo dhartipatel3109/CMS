@@ -47,12 +47,11 @@
                 	</c:if>
                 </div>
                 <form class="login100-form" action="/dept/dashboard" method="post">
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">User Name<span style="color: #ff5e13;">&nbsp;*</span></span>
-                        <input class="input100" type="text" name="userName" placeholder="Enter Username" value="" required>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email id is required">
+                        <span class="label-input100">Email Id<span style="color: #ff5e13;">&nbsp;*</span></span>
+                        <input class="input100" type="text" name="userName" placeholder="Enter Email id" value="" required>
                         <span class="focus-input100"></span>
                     </div>
-					
                     <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
                         <span class="label-input100">Password<span style="color: #ff5e13;">&nbsp;*</span></span>
                         <input id="passwd" class="input100" type="password" name="pass" placeholder="Enter password" required>

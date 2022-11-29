@@ -9,6 +9,9 @@ import com.example.demo.model.Dept;
 public interface DeptRepository extends JpaRepository<Dept, Integer> {
 
 	// Meaning: SELECT * FROM DEPT WHERE USERNAME = username
-	Dept findByUserName(String username);
+	// Dept findByUserName(String username);
+
+	// Meaning: SELECT * FROM DEPT WHERE EMAIL = email
+	Dept findByEmail(String email);
 
 }

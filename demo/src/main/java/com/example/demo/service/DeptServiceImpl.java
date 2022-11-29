@@ -13,21 +13,35 @@ public class DeptServiceImpl implements DeptService {
 
 	@Override
 	public boolean isUserNameExist(String userName) {
-		Dept dept = deptRepository.findByUserName(userName);
+		// Dept dept = deptRepository.findByUserName(userName);
+//		if (dept != null)
+//			return true;
+//		return false;
+		return true;
+	}
+
+	@Override
+	public boolean isValidDept(String email, String pass) {
+		Dept dept = deptRepository.findByEmail(email);
+		String dept_repo_email = dept.getEmail();
+		String dept_repo_pass = dept.getPassword();
+
+		if (dept_repo_email.trim().equalsIgnoreCase(email) && dept_repo_pass.equals(pass))
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean isEmailExist(String email) {
+		Dept dept = deptRepository.findByEmail(email);
 		if (dept != null)
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean isValidDept(String userName, String pass) {
-		Dept dept = deptRepository.findByUserName(userName);
-		String dept_repo_username = dept.getUserName();
-		String dept_repo_pass = dept.getPassword();
-
-		if (dept_repo_username.trim().equalsIgnoreCase(userName) && dept_repo_pass.equals(pass))
-			return true;
-		return false;
+	public Dept getFirstName(String email) {
+		return deptRepository.findByEmail(email);
 	}
 
 }

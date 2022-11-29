@@ -22,7 +22,8 @@ public class MyDeptDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		dept = deptRepository.findByUserName(username);
+		String email = username;
+		dept = deptRepository.findByEmail(email);
 		logger.info("<=== MyUserDetailSetvice: Department from Repository ===>" + dept.getEmail());
 
 		MyDeptDetails myDeptDetails = null;
@@ -32,7 +33,7 @@ public class MyDeptDetailsService implements UserDetailsService {
 
 			logger.info("<=== My Dept Detail ===>" + myDeptDetails);
 		} else {
-			throw new UsernameNotFoundException("DEPT DOES NOT EXISTS");
+			throw new UsernameNotFoundException("DEPTARTMENT DOES NOT EXISTS");
 		}
 
 		return myDeptDetails;

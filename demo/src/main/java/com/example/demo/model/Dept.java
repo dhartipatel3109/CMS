@@ -18,8 +18,8 @@ public class Dept {
 	private String deptName;
 	// department name
 
-	@Column(unique = true)
-	private String userName;
+//	@Column(unique = true)
+//	private String userName;
 	// person username
 
 	@Column(unique = true)
@@ -41,7 +41,7 @@ public class Dept {
 			String lastName, BigInteger mobileNo, boolean email_verified, String role) {
 		super();
 		this.id = id;
-		this.userName = userName;
+		// this.userName = userName;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
@@ -68,13 +68,13 @@ public class Dept {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+//	public String getUserName() {
+//		return userName;
+//	}
+//
+//	public void setUserName(String userName) {
+//		this.userName = userName;
+//	}
 
 	public String getEmail() {
 		return email;
@@ -134,9 +134,8 @@ public class Dept {
 
 	@Override
 	public String toString() {
-		return "Dept [id=" + id + ", userName=" + userName + ", email=" + email + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", mobileNo=" + mobileNo + ", email_verified=" + email_verified + ", role="
-				+ role + "]";
+		return "Dept [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", mobileNo=" + mobileNo + ", email_verified=" + email_verified + ", role=" + role + "]";
 	}
 
 }

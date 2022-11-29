@@ -18,12 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.example.demo.model.Dept;
 import com.example.demo.model.User;
 import com.example.demo.service.DeptService;
 
 @Controller
 @RequestMapping("/dept")
-@SessionAttributes("uname")
+@SessionAttributes("dept_firstname")
 public class DeptController {
 
 	Logger logger = LoggerFactory.getLogger(DeptController.class);
@@ -40,16 +41,21 @@ public class DeptController {
 
 	@PostMapping(value = "/dashboard")
 	public String homePage(@RequestParam String userName, @RequestParam String pass, Model model) {
-		if (deptService.isUserNameExist(userName)) {
-			if (deptService.isValidDept(userName, pass)) {
-				model.addAttribute("uname", userName);
+		String email = userName;
+		if (deptService.isEmailExist(email)) {
+			// logger.info("<== DEPARTMENT CONTROLLER | Email Exists ==>");
+			if (deptService.isValidDept(email, pass)) {
+				// logger.info("<== DEPARTMENT CONTROLLER | Email and PASSWORD MATCHES ==>");
+				Dept dept = deptService.getFirstName(email);
+				// logger.info("<== DEPARTMENT CONTROLLER | AFTER /dashboard ==>" + dept);
+				model.addAttribute("dept_firstname", dept.getFirstName());
 				return "dept/Home";
 			} else {
 				model.addAttribute("login-message", "Sorry!! Username or Password is Incorrect!!");
 				return "redirect:/dept/login";
 			}
 		}
-		model.addAttribute("login-message", "Username does not exist!! Please Sign Up!!");
+		model.addAttribute("login-message", "Email id does not exist!! Please Contact to Admin!!");
 		return "redirect:/dept/login";
 
 	}

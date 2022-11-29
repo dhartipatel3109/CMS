@@ -47,9 +47,9 @@
                 	</c:if>
                 </div>
                 <form class="login100-form" action="/admin/dashboard" method="post">
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">User Name<span style="color: #ff5e13;">&nbsp;*</span></span>
-                        <input class="input100" type="text" name="userName" placeholder="Enter Username" value="" required>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="email id is required">
+                        <span class="label-input100">Email id<span style="color: #ff5e13;">&nbsp;*</span></span>
+                        <input class="input100" type="text" name="userName" placeholder="Enter Email id" value="" required>
                         <span class="focus-input100"></span>
                     </div>
 					
